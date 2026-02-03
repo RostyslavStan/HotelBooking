@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace HotelBooking.Application.Contracts
 {
-    public record RegisterRequest(string name, string email, string passwordHash);
+    public record RegisterRequest(string name, string email, string password);
 }

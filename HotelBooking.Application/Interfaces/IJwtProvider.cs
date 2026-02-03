@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace HotelBooking.Application.Interfaces
 {
-    public interface IUserRepository
+    public interface IJwtProvider
     {
-        Task Add(User user);
-        Task<User> GetByEmail(string email);
+        string GenerateToken(User user);
     }
 }

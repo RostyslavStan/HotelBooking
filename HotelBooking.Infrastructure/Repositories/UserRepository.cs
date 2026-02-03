@@ -1,6 +1,7 @@
 ﻿using HotelBooking.Application.Interfaces;
 using HotelBooking.Domain.Entities;
 using HotelBooking.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,14 @@ namespace HotelBooking.Infrastructure.Repositories
 
         public async Task Add(User user)
         {
-            //await _context.Users.AddAsync(user);
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<User> GetByEmail(string email)
+        {
+            var user = await _context.Users.FirstAsync(u => u.Email == email);
+            return user;
         }
     }
 }

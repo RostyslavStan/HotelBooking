@@ -8,7 +8,7 @@ namespace HotelBooking.Domain.Enums
 {
     public enum UserRole
     {
-        Admin,
-        Client
+        Admin = 0,
+        Client = 1
     }
 }
